@@ -52,3 +52,5 @@ dist/
 
 # umi
 pages/.umi
+config/config.local.js
+.umirc.local.js

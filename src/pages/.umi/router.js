@@ -8,9 +8,23 @@ let Router = require('dva/router').routerRedux.ConnectedRouter;
 
 let routes = [
   {
+    "path": "/404",
+    "exact": true,
+    "component": dynamic({ loader: () => import(/* webpackChunkName: "p__404" */'../404.js'), loading: require('/Users/x/context/react/shikamaru/src/components/Loading.js').default }),
+    "_title": "default title",
+    "_title_default": "default title"
+  },
+  {
     "path": "/",
     "exact": true,
     "component": dynamic({ loader: () => import(/* webpackChunkName: "p__index__index" */'../index/index.js'), loading: require('/Users/x/context/react/shikamaru/src/components/Loading.js').default }),
+    "_title": "default title",
+    "_title_default": "default title"
+  },
+  {
+    "path": "/posts/:id",
+    "exact": true,
+    "component": dynamic({ loader: () => import(/* webpackChunkName: "p__posts__$id" */'../posts/$id.js'), loading: require('/Users/x/context/react/shikamaru/src/components/Loading.js').default }),
     "_title": "default title",
     "_title_default": "default title"
   },
