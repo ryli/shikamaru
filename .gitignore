@@ -47,4 +47,8 @@ jspm_packages
 # Output of 'npm pack'
 *.tgz
 
+# build
 dist/
+
+# umi
+pages/.umi
