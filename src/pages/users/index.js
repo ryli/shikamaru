@@ -1,13 +1,13 @@
 import React from 'react'
-import Link from 'umi/link'
+import router from 'umi/router'
 
 import styles from './index.css'
 
 export default function() {
   return (
     <div className={styles.normal}>
-      <h1>Page index</h1>
-      <Link to="/users">go to /users</Link>
+      <h1>Page users</h1>
+      <button type="button" onClick={() => { router.goBack() }}>go back</button>
     </div>
   )
 }
