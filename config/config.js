@@ -24,7 +24,7 @@ export default {
       pwa: false,
       // 开启高清方案
       hd: true,
-      fastClick: true,
+      fastClick: false,
       // 开启 title 插件，设置 HTML title
       title: 'default title',
     }],

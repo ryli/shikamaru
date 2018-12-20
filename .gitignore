@@ -2,10 +2,16 @@
 .DS_Store
 */.DS_Store
 
+/.vscode
+.history
+.idea
+*bak
+
 # Logs
 logs
 *.log
 npm-debug.log*
+yarn-error.log
 
 # Runtime data
 pids
@@ -47,10 +53,16 @@ jspm_packages
 # Output of 'npm pack'
 *.tgz
 
-# build
-dist/
+# production
+/dist
+
 
 # umi
-pages/.umi
+.umi
+.umi-production
 config/config.local.js
 .umirc.local.js
+
+# roadhog-api-doc ignore
+/src/utils/request-temp.js
+_roadhog-api-doc

@@ -1,13 +1,8 @@
 import React from 'react'
-import router from 'umi/router'
+import Users from './components/Users'
 
-import styles from './index.css'
-
-export default function() {
-  return (
-    <div className={styles.normal}>
-      <h1>Page users</h1>
-      <button type="button" onClick={() => { router.goBack() }}>go back</button>
-    </div>
-  )
-}
+export default () => (
+  <div>
+    <Users />
+  </div>
+)
