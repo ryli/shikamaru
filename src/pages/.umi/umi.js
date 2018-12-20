@@ -3,7 +3,7 @@ import '../../global.js';
 import '@tmp/initHistory';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../../../node_modules/_umi-plugin-hd@1.2.0@umi-plugin-hd/template/index.js';
+
 
 // runtime plugins
 window.g_plugins = require('umi/_runtimePlugin');
