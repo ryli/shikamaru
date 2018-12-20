@@ -29,4 +29,6 @@ export default {
       title: 'default title',
     }],
   ],
+  // 忽略 moment 的 locale 文件，用于减少尺寸
+  ignoreMomentLocale: true,
 }

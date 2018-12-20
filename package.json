@@ -6,7 +6,7 @@
   "scripts": {
     "start": "umi dev",
     "start:no-mock": "cross-env MOCK=none umi dev",
-    "build": "umi build",
+    "build": "ANALYZE=1 umi build",
     "lint": "eslint --ext .js src",
     "lint:style": "stylelint \"src/**/*.less\" --syntax less",
     "lint:fix": "eslint --fix --ext .js src mock tests && npm run lint:style",
