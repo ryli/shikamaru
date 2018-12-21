@@ -25,8 +25,8 @@ class UserEditModal extends Component {
   };
 
   okHandler = () => {
-    const { onOk } = this.props
-    this.props.form.validateFields((err, values) => {
+    const { form, onOk } = this.props
+    form.validateFields((err, values) => {
       if (!err) {
         onOk(values)
         this.hideModelHandler()
@@ -35,9 +35,10 @@ class UserEditModal extends Component {
   };
 
   render() {
-    const { children } = this.props
-    const { getFieldDecorator } = this.props.form
-    const { name, email, website } = this.props.record
+    const { visible } = this.state
+    const { children, form, record } = this.props
+    const { getFieldDecorator } = form
+    const { name, email, website } = record
     const formItemLayout = {
       labelCol: { span: 6 },
       wrapperCol: { span: 14 },
@@ -45,12 +46,12 @@ class UserEditModal extends Component {
 
     return (
       <span>
-        <span onClick={this.showModelHandler}>
+        <span onClick={this.showModelHandler} role="button" tabIndex={0}>
           { children }
         </span>
         <Modal
           title="Edit User"
-          visible={this.state.visible}
+          visible={visible}
           onOk={this.okHandler}
           onCancel={this.hideModelHandler}
         >

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'dva'
 import { Table, Pagination, Popconfirm, Button } from 'antd'
 import { routerRedux } from 'dva/router'
@@ -93,6 +94,13 @@ function Users({ dispatch, list: dataSource, loading, total, page: current }) {
       </div>
     </div>
   )
+}
+
+Users.propTypes = {
+  list: PropTypes.array,
+  loading: PropTypes.bool,
+  total: PropTypes.number,
+  page: PropTypes.number,
 }
 
 function mapStateToProps(state) {
