@@ -9,40 +9,40 @@ let Router = require('dva/router').routerRedux.ConnectedRouter;
 let routes = [
   {
     "path": "/",
-    "component": dynamic({ loader: () => import(/* webpackChunkName: "layouts__index" */'../../layouts/index.js'), loading: require('/Users/x/context/react/shikamaru/src/components/Loading.js').default }),
+    "component": dynamic({ loader: () => import(/* webpackChunkName: "layouts__index" */'../../layouts/index.tsx'), loading: require('/Users/x/context/react/shikamaru/src/components/Loading.js').default }),
     "routes": [
       {
         "path": "/404",
         "exact": true,
-        "component": dynamic({ loader: () => import(/* webpackChunkName: "p__404" */'../404.js'), loading: require('/Users/x/context/react/shikamaru/src/components/Loading.js').default }),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: "p__404" */'../404.tsx'), loading: require('/Users/x/context/react/shikamaru/src/components/Loading.js').default }),
         "_title": "default title",
         "_title_default": "default title"
       },
       {
         "path": "/",
         "exact": true,
-        "component": dynamic({ loader: () => import(/* webpackChunkName: "p__index" */'../index.js'), loading: require('/Users/x/context/react/shikamaru/src/components/Loading.js').default }),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: "p__index" */'../index.tsx'), loading: require('/Users/x/context/react/shikamaru/src/components/Loading.js').default }),
         "_title": "default title",
         "_title_default": "default title"
       },
       {
         "path": "/posts/:id",
         "exact": true,
-        "component": dynamic({ loader: () => import(/* webpackChunkName: "p__posts__$id" */'../posts/$id.js'), loading: require('/Users/x/context/react/shikamaru/src/components/Loading.js').default }),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: "p__posts__$id" */'../posts/$id.tsx'), loading: require('/Users/x/context/react/shikamaru/src/components/Loading.js').default }),
         "_title": "default title",
         "_title_default": "default title"
       },
       {
         "path": "/users/constants",
         "exact": true,
-        "component": dynamic({ loader: () => import(/* webpackChunkName: "p__users__constants" */'../users/constants.js'), loading: require('/Users/x/context/react/shikamaru/src/components/Loading.js').default }),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: "p__users__constants" */'../users/constants.ts'), loading: require('/Users/x/context/react/shikamaru/src/components/Loading.js').default }),
         "_title": "default title",
         "_title_default": "default title"
       },
       {
         "path": "/users",
         "exact": true,
-        "component": dynamic({ loader: () => import(/* webpackChunkName: "p__users__index" */'../users/index.js'), loading: require('/Users/x/context/react/shikamaru/src/components/Loading.js').default }),
+        "component": dynamic({ loader: () => import(/* webpackChunkName: "p__users__index" */'../users/index.tsx'), loading: require('/Users/x/context/react/shikamaru/src/components/Loading.js').default }),
         "_title": "default title",
         "_title_default": "default title"
       },

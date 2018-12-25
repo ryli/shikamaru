@@ -15,4 +15,4 @@ app.use(createLoading());
 });
 app.use(require('/Users/x/context/react/shikamaru/node_modules/_dva-immer@0.2.4@dva-immer/lib/index.js').default());
 app.model({ namespace: 'example', ...(require('/Users/x/context/react/shikamaru/src/models/example.js').default) });
-app.model({ namespace: 'users', ...(require('/Users/x/context/react/shikamaru/src/pages/users/models/users.js').default) });
+app.model({ namespace: 'users', ...(require('/Users/x/context/react/shikamaru/src/pages/users/models/users.ts').default) });

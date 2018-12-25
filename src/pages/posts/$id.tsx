@@ -2,9 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import router from 'umi/router'
 
-import styles from './index.css'
+import { propsType } from 'reactType'
 
-const Post = ({ match }) => (
+// TODO: 这里还报错
+import styles from './id.css'
+
+const Post = ({ match }: propsType) => (
   <div className={styles.normal}>
     <h1>
       Post

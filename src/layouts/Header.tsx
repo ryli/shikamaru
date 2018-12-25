@@ -2,7 +2,11 @@ import React from 'react'
 import { Menu, Icon } from 'antd'
 import Link from 'umi/link'
 
-function Header({ location }) {
+interface Props {
+  [key: string]: any
+}
+
+function Header({ location }: Props) {
   return (
     <Menu
       selectedKeys={[location.pathname]}

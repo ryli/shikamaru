@@ -3,15 +3,28 @@ import { Modal, Form, Input } from 'antd'
 
 const FormItem = Form.Item
 
-class UserEditModal extends Component {
-  constructor(props) {
+interface Props {
+  children: any
+  record: any
+  form: any
+  onOk: any
+}
+
+interface State {
+  visible: boolean
+}
+
+class UserEditModal extends Component<Props, State> {
+  static propTypes = {}
+
+  constructor(props: Props) {
     super(props)
     this.state = {
       visible: false,
     }
   }
 
-  showModelHandler = e => {
+  showModelHandler = (e: any) => {
     if (e) e.stopPropagation()
     this.setState({
       visible: true,
@@ -26,7 +39,7 @@ class UserEditModal extends Component {
 
   okHandler = () => {
     const { form, onOk } = this.props
-    form.validateFields((err, values) => {
+    form.validateFields((err: any, values: any) => {
       if (!err) {
         onOk(values)
         this.hideModelHandler()
@@ -55,7 +68,7 @@ class UserEditModal extends Component {
           onOk={this.okHandler}
           onCancel={this.hideModelHandler}
         >
-          <Form horizontal onSubmit={this.okHandler}>
+          <Form layout="horizontal" onSubmit={this.okHandler}>
             <FormItem
               {...formItemLayout}
               label="Name"

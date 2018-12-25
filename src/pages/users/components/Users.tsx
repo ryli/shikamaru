@@ -1,35 +1,46 @@
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'dva'
 import { Table, Pagination, Popconfirm, Button } from 'antd'
 import { routerRedux } from 'dva/router'
-import styles from './Users.css'
 import { PAGE_SIZE } from '../constants'
 import UserModal from './UserModal'
 
-function Users({ dispatch, list: dataSource, loading, total, page: current }) {
-  function deleteHandler(id) {
+const styles = require('./Users.css')
+
+interface Props {
+  [key: string]: any
+}
+
+interface State {
+  [key: string]: any
+}
+
+function Users({ dispatch, list: dataSource, loading, total, page: current }: Props) {
+  function deleteHandler(id: number) {
     dispatch({
       type: 'users/remove',
       payload: id,
     })
   }
 
-  function pageChangeHandler(page) {
+  function pageChangeHandler(page: number) {
     dispatch(routerRedux.push({
       pathname: '/users',
-      query: { page },
+      // query: { page },
+      search: `page=${page}`,
     }))
   }
 
-  function editHandler(id, values) {
+  function editHandler(id: number, values: any) {
     dispatch({
       type: 'users/patch',
       payload: { id, values },
     })
   }
 
-  function createHandler(values) {
+  function createHandler(values: any) {
     dispatch({
       type: 'users/create',
       payload: values,
@@ -41,7 +52,7 @@ function Users({ dispatch, list: dataSource, loading, total, page: current }) {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
-      render: text => <a href="">{text}</a>,
+      render: (text: string) => <a href="">{text}</a>,
     },
     {
       title: 'Email',
@@ -56,7 +67,7 @@ function Users({ dispatch, list: dataSource, loading, total, page: current }) {
     {
       title: 'Operation',
       key: 'operation',
-      render: (text, record) => (
+      render: (text: void, record: any) => (
         <span className={styles.operation}>
           <UserModal record={record} onOk={editHandler.bind(null, record.id)}>
             <a>Edit</a>
@@ -103,7 +114,7 @@ Users.propTypes = {
   page: PropTypes.number,
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state: State) {
   const { list, total, page } = state.users
   return {
     list,

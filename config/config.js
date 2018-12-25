@@ -1,3 +1,5 @@
+import path from 'path'
+
 export default {
   plugins: [
     ['umi-plugin-react', {
@@ -27,6 +29,18 @@ export default {
       fastClick: false,
       // 开启 title 插件，设置 HTML title
       title: 'default title',
+      // 动态加载 antd 样式
+      typescript: {
+        getCustomTransformers: () => ({
+          before: [
+            tsImportPluginFactory({
+              libraryDirectory: 'es',
+              libraryName: 'antd',
+              style: true,
+            }),
+          ],
+        }),
+      },
     }],
   ],
   // 忽略 moment 的 locale 文件，用于减少尺寸
